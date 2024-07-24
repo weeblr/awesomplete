@@ -22,6 +22,7 @@ var _ = function (input, o) {
 	this.input.setAttribute("autocomplete", "off");
 	this.input.setAttribute("aria-autocomplete", "list");
 	this.input.setAttribute("aria-expanded", "false");
+	this.input.setAttribute("aria-controls", "awesomplete_list_" + this.count);
 	this.input.setAttribute("aria-owns", "awesomplete_list_" + this.count);
 	this.input.setAttribute("role", "combobox");
 
@@ -230,7 +231,8 @@ _.prototype = {
 		this.input.removeAttribute("autocomplete");
 		this.input.removeAttribute("aria-autocomplete");
 		this.input.removeAttribute("aria-expanded");
-		this.input.removeAttribute("aria-owns");
+		this.input.removeAttribute("aria-controls");
+		this.input.removeAttribute("aria-owns");		
 		this.input.removeAttribute("role");
 
 		//remove this awesomeplete instance from the global array of instances
